@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean name="petrolEngine" class="co.pragra.leaening.springsession2.domain.PetroEngine">
+        </bean>
+        <bean name="dieselEngine" class="co.pragra.leaening.springsession2.domain.DieselEngine"></bean>
+        <bean name="electric" class="co.pragra.leaening.springsession2.domain.Electric"></bean>
+        <bean name="car" init-method="startCar" destroy-method="stopCar" class="co.pragra.leaening.springsession2.domain.Car">
+            <property name="engine" ref="dieselEngine"></property>
+            <property name="make" value="Honda"></property>
+            <property name="model" value="City"></property>
+        </bean>
+        <bean name="superCar" class="co.pragra.leaening.springsession2.domain.SuperCar" factory-method="getSuperCar">
+
+        </bean>
+</beans>
